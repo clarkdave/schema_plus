@@ -62,7 +62,6 @@ module SchemaPlus
 
             params = [name.inspect]
             params << values.map(&:inspect).join(', ')
-            params << ":schema => #{schema.inspect}"
 
             stream.puts "  create_enum #{params.join(', ')}"
           end

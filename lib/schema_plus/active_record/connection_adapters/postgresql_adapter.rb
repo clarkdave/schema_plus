@@ -345,7 +345,7 @@ module SchemaPlus
         def create_enum(name, *values)
           options = values.extract_options!
           list = values.map { |value| escape_enum_value(value) }
-          execute "CREATE TYPE #{enum_name(name, options[:schema])} AS ENUM (#{list.join(',')})"
+          execute "CREATE TYPE #{name} AS ENUM (#{list.join(',')})"
         end
 
         def alter_enum(name, value, options = {})
